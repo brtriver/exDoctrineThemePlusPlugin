@@ -1,0 +1,14 @@
+table th{
+  background:#F8F3ED url(../images/dot.gif) repeat-x scroll left bottom;
+  font-weight: bold;
+  padding: 5px;
+}
+table td{
+  background:#FFF url(../images/dot.gif) repeat-x scroll left bottom;
+  text-align: left;
+  padding: 5px;
+}
+
+ul.error_list li {
+  color: red;
+}

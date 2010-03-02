@@ -1,0 +1,15 @@
+#sf_admin_bar {
+  float: none;
+}
+#sf_admin_bar div.sf_admin_filter table {
+  width: 500px;
+}
+#sf_admin_bar div.sf_admin_filter table tbody {
+/*  height: 300px;*/
+  overflow-x: hidden;
+}
+#sf_admin_container .error, #sf_admin_container ul.error_list li {
+    /* change error color */
+    background-color: #FFFFFF;
+    color: #FF3300;
+}  
