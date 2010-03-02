@@ -1,0 +1,70 @@
+exDoctrineThemePlusPlugin
+=========================
+
+What's this?
+-------------
+
+This is a symfony 1.4(1.3) plugin and add a new theme of Doctrine for a generator.
+If you use this new theme, you can add a confirm proccess to edit or create easily.
+The confirm proccess has been widely used in Japan before.
+
+Usage
+------
+
+* git clone from this github repository
+
+<code>
+$cd YOUR_SYMFONY_PRJECTO_ROOT/plugins/
+$git clone git://github.com/brtriver/exDoctrineThemePlusPlugin.git ./exDoctrineThemePlusPlugin
+</code>
+
+* add this plugin in your PorjectConfiguration file to enable
+
+#### ProjectConfiguration.class.php
+<code>
+	class ProjectConfiguration extends sfProjectConfiguration
+	{
+	  public function setup()
+	  {
+	    $this->enablePlugins('sfDoctrinePlugin', 'exDoctrineThemePlusPlugin');
+	  }
+	}
+</code>
+
+* clear cache
+
+<code>
+$./symfony cache:clear
+</code>
+
+* check new tasks in command line
+
+if you can see <code>:generate-admin-plus</code>, you have succeed add this plugin to your project.
+
+<code>
+$./symfony list:doctrine
+  ....
+  :generate-admin-plus         Generates a Doctrine admin module with the process to confirm input values
+  ...
+</code>
+
+* use generate-admin-plus
+
+Only you run below:
+<code>
+$./symfony doctrine:generate-admin-plus admin application route_or_model
+</code>
+
+If you ran first time, routing.yml has with_separated_confirm key and true is set:
+<code>
+  article:
+     class: sfDoctrineRouteCollectionPlus
+     options:
+       model:                Article
+       with_wildcard_routes: true
+       with_separated_confirm: true
+</code>
+
+If you don't use a confirm proccess, you only set this value to false. it's easy.
+
+If your routing.yml already has a routing, you should add <code>with_separated_confirm: true</code> by hand.
